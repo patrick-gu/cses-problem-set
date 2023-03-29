@@ -4,11 +4,12 @@ using namespace std;
 int main(void) {
     int n;
     cin >> n;
-    unordered_set<int> s;
+    vector<int> xs;
     while (n--) {
         int x;
         cin >> x;
-        s.insert(x);
+        xs.push_back(x);
     }
-    cout << s.size() << "\n";
+    sort(xs.begin(), xs.end());
+    cout << unique(xs.begin(), xs.end()) - xs.begin() << "\n";
 }
